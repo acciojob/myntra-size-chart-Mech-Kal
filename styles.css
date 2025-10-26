@@ -1,11 +1,11 @@
 /* your css code here. If applicable */
 
 table {
-    border-collapse: collapse; /* Removes double borders */
-    width: 70%; /* Adjusts the width */
-    margin: 20px auto; /* Center the table */
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
     font-family: Arial, sans-serif;
-    border: 1px solid #333; /* Outer border */
+    border: 1px solid #333;
 }
 
 /* Styling for all cells (th and td) */
@@ -17,40 +17,34 @@ th, td {
 
 /* Header styling (thead) - Dark Red Background */
 thead tr {
-    background-color: #a02836; /* Dark Red/Maroon color */
+    background-color: #a02836;
     color: white;
     font-weight: bold;
 }
 
 thead th {
-    /* Ensures header cells match the header background */
     border-color: #a02836; 
 }
 
-/* Row Headers (the 'Part' column) - Gray Background */
-tbody th {
+/* NEW CSS: Target the first <td> in tbody rows (which now holds the row name) */
+tbody tr td:first-child {
     text-align: left;
     background-color: #e0e0e0; /* Light Gray for row headers */
     color: #333;
     font-weight: bold;
 }
 
-/* Alternating background colors for data rows */
-tbody tr:nth-child(odd) td {
+/* Fallback/Generic data cell styling */
+tbody td {
     background-color: white;
 }
 
-tbody tr:nth-child(even) td {
+/* Alternating background colors for data rows (for cells AFTER the first one) */
+tbody tr:nth-child(even) td:not(:first-child) {
     background-color: #f0f0f0; /* Lightest gray/white for contrast */
 }
 
-/* Specific styling for the first data cell in the body (Waist-XS) and all other data cells */
-tbody td {
-    /* Ensures data cells use the light background */
-    background-color: white; 
-}
-
-/* Apply specific light gray background to the Sleeve row to match the image's appearance */
-tbody tr:last-child {
-    background-color: #e0e0e0;
+/* Ensure the sleeve row's data cells get the correct background */
+tbody tr:last-child td:not(:first-child) {
+    background-color: #f0f0f0;
 }
