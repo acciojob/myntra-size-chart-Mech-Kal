@@ -1,2 +1,41 @@
+/* your css code here. If applicable */
 
-/* Your CSS Code here. */
+table {
+	border-collapse: collapse; /* Removes double borders */
+	width: 60%; /* Adjusts the width for better presentation */
+	margin: 20px auto; /* Center the table */
+	font-family: Arial, sans-serif;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for visual appeal */
+}
+
+/* Styling for all cells (th and td) */
+th, td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Styling for the header row and column names */
+thead th {
+	background-color: #f2f2f2; /* Light background for the header */
+	color: #333;
+	font-weight: bold;
+}
+
+/* Styling for the first column (Row Names) */
+th:first-child, td:first-child {
+	text-align: left; /* Aligns the row names to the left */
+	background-color: #f7f7f7;
+	font-weight: bold;
+	color: #555;
+}
+
+/* Styling for the data cells */
+tbody td {
+	background-color: white;
+}
+
+/* Styling the row that is visually darker in the image (the Chest row) */
+tbody tr:nth-child(2) td {
+	background-color: #f9e9ea; /* A slightly darker/pinkish tone for visual distinction */
+}
