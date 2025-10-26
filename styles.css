@@ -1,41 +1,56 @@
 /* your css code here. If applicable */
 
 table {
-	border-collapse: collapse; /* Removes double borders */
-	width: 60%; /* Adjusts the width for better presentation */
-	margin: 20px auto; /* Center the table */
-	font-family: Arial, sans-serif;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for visual appeal */
+    border-collapse: collapse; /* Removes double borders */
+    width: 70%; /* Adjusts the width */
+    margin: 20px auto; /* Center the table */
+    font-family: Arial, sans-serif;
+    border: 1px solid #333; /* Outer border */
 }
 
 /* Styling for all cells (th and td) */
 th, td {
-	border: 1px solid #ddd;
-	padding: 10px;
-	text-align: center;
+    border: 1px solid #888;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Styling for the header row and column names */
+/* Header styling (thead) - Dark Red Background */
+thead tr {
+    background-color: #a02836; /* Dark Red/Maroon color */
+    color: white;
+    font-weight: bold;
+}
+
 thead th {
-	background-color: #f2f2f2; /* Light background for the header */
-	color: #333;
-	font-weight: bold;
+    /* Ensures header cells match the header background */
+    border-color: #a02836; 
 }
 
-/* Styling for the first column (Row Names) */
-th:first-child, td:first-child {
-	text-align: left; /* Aligns the row names to the left */
-	background-color: #f7f7f7;
-	font-weight: bold;
-	color: #555;
+/* Row Headers (the 'Part' column) - Gray Background */
+tbody th {
+    text-align: left;
+    background-color: #e0e0e0; /* Light Gray for row headers */
+    color: #333;
+    font-weight: bold;
 }
 
-/* Styling for the data cells */
+/* Alternating background colors for data rows */
+tbody tr:nth-child(odd) td {
+    background-color: white;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: #f0f0f0; /* Lightest gray/white for contrast */
+}
+
+/* Specific styling for the first data cell in the body (Waist-XS) and all other data cells */
 tbody td {
-	background-color: white;
+    /* Ensures data cells use the light background */
+    background-color: white; 
 }
 
-/* Styling the row that is visually darker in the image (the Chest row) */
-tbody tr:nth-child(2) td {
-	background-color: #f9e9ea; /* A slightly darker/pinkish tone for visual distinction */
+/* Apply specific light gray background to the Sleeve row to match the image's appearance */
+tbody tr:last-child {
+    background-color: #e0e0e0;
 }
